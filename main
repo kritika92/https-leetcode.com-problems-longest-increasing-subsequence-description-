@@ -1,0 +1,28 @@
+class Solution(object):
+    
+   
+
+    def lengthOfLIS(self, nums):
+        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        l=len(nums)
+        if l<=1:
+            return l 
+        else:
+            maxim=1
+            dpi=[1]*l
+            for i in range(l-2,-1,-1):
+                count=1
+                for j in range(i+1,l):
+                    if nums[j]>nums[i] and dp[j]+1>dp[i]:
+                        dpi[i]=dpi[j]+1
+            dpd=[1]*1
+            for i in range(l-2,-1,-1):
+                count=1
+                for j in range(i+1,l):
+                    if nums[j]<nums[i] and dpd[j]+1>dpd[i]:
+                        dpd[i]=dpd[j]+1
+                    
